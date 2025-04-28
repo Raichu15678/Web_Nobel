@@ -12,6 +12,16 @@ function kereses() {
                 ${elem.year} ${elem.category}
                 </p>
                 `
+                for (const elemEmber of elem.laureates) {
+                    sz+=`
+                    <p style="font-size:15px;font-style:italic">
+                    ${elemEmber.firstname} ${elemEmber.surname}
+                    </p>
+                    <p style="font-size:10px">
+                    ${elemEmber.motivation}
+                    </p>
+                    `
+                }
             }
         });
         document.getElementById("kiadat").innerHTML=sz
