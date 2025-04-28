@@ -8,7 +8,7 @@ function kereses() {
             if (elem.year==beEv) {
                 
                 sz+=`
-                <p>
+                <p style="font-size:20px;text-decoration:underline;color:blue">
                 ${elem.year} ${elem.category}
                 </p>
                 `
@@ -22,6 +22,7 @@ function kereses() {
                     </p>
                     `
                 }
+                sz+=`<hr>`
             }
         });
         document.getElementById("kiadat").innerHTML=sz
