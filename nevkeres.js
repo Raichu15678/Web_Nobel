@@ -13,6 +13,8 @@ function nevMegjelenit(y,beNev) {
                 console.log(alElem.firstname)
             }
         }
+        else
+            console.log(elem.year+" "+elem.category)
     }
 
 
