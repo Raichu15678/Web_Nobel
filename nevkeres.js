@@ -21,7 +21,7 @@ function nevMegjelenit(y,beNev) {
     for (const elem of y.prizes) {
         if (elem.laureates!=undefined)
         for (const alElem of elem.laureates) {
-            if (alElem.firstname.toLowerCase()==beNev.toLowerCase()) {
+            if (alElem.firstname.toLowerCase().includes(beNev.toLowerCase()) || alElem.motivation.toLowerCase().includes(beNev.toLowerCase())) {
                 console.log(alElem.firstname)
                 sz+=`
                 <tr>
@@ -33,8 +33,17 @@ function nevMegjelenit(y,beNev) {
                 `
             }
         }
-        else
-            console.log(elem.year+" "+elem.category)
+        if (elem.surname!=undefined && alElem.surname.toLowerCase().includes(beNev.toLowerCase()))
+        console.log(alElem.firstname)
+                sz+=`
+                <tr>
+                <td>${elem.year} ${elem.category}</td>
+                <td>${alElem.firstname}</td>
+                <td>${alElem.surname}</td>
+                <td>${alElem.motivation}</td>
+                </tr>
+                `
+        
     }
 
     sz+=`
